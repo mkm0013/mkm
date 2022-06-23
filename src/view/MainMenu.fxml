@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainMenuController">
+    <children>
+        <Pane layoutX="42.0" layoutY="111.0" prefHeight="300.0" prefWidth="500.0" style="-fx-border-color:black; -fx-border-width:1; -fx-border-style:solid;">
+
+            <children>
+                <HBox alignment="BOTTOM_RIGHT" layoutX="239.0" layoutY="230.0" prefHeight="49.0" prefWidth="247.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="button1" maxWidth="-Infinity" onAction="#onActionAddPartMain" prefWidth="60.0" text="Add" />
+                        <Button fx:id="button2" maxWidth="-Infinity" onAction="#onActionModifyPartMain" prefWidth="60.0" text="Modify" />
+                        <Button fx:id="button" maxHeight="-Infinity" onAction="#onActionDeletePartMain" prefWidth="60.0" text="Delete" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding></HBox>
+                <TableView fx:id="mainpartsTableView" layoutX="27.0" layoutY="81.0" prefHeight="138.0" prefWidth="447.0">
+                    <columns>
+                        <TableColumn fx:id="mainpartIDCol" prefWidth="75.0" text="Part ID" />
+                        <TableColumn fx:id="mainpartnameCol" prefWidth="89.0" text="Part Name" />
+                        <TableColumn fx:id="mainpartinvlvlCol" prefWidth="122.0" text="Inventory Level" />
+                        <TableColumn fx:id="mainpartscostCol" prefWidth="159.0" text="Price/ Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Label layoutX="57.0" layoutY="55.0" text="Parts">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="mainMenuPartSearch" layoutX="313.0" layoutY="22.0" onAction="#mainMenuPartSearchbar" />
+            </children>
+        </Pane>
+        <Pane layoutX="639.0" layoutY="111.0" prefHeight="300.0" prefWidth="500.0" style="-fx-border-color:black; -fx-border-width:1; -fx-border-style:solid;">
+            <children>
+                <HBox alignment="BOTTOM_RIGHT" layoutX="239.0" layoutY="230.0" prefHeight="49.0" prefWidth="247.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="button11" maxWidth="-Infinity" onAction="#onActionAddProdMain" prefWidth="60.0" text="Add" />
+                        <Button fx:id="button21" maxWidth="-Infinity" onAction="#onActionModifyProdMain" prefWidth="60.0" text="Modify" />
+                        <Button fx:id="button12" maxHeight="-Infinity" onAction="#onActionDeleteProdMain" prefWidth="60.0" text="Delete" />
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </HBox>
+                <TableView fx:id="mainprodTableView" layoutX="27.0" layoutY="81.0" prefHeight="138.0" prefWidth="447.0">
+                    <columns>
+                        <TableColumn fx:id="mainprodIDCol" prefWidth="75.0" text="Product  ID" />
+                        <TableColumn fx:id="mainprodnameCol" prefWidth="89.0" text="Product Name" />
+                        <TableColumn fx:id="mainprodinvlvlCol" prefWidth="122.0" text="Inventory Level" />
+                        <TableColumn fx:id="mainprodcostCol" prefWidth="159.0" text="Price/ Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Label layoutX="57.0" layoutY="55.0" text="Products">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="mainMenuProductSearch" layoutX="314.0" layoutY="14.0" onAction="#mainMenuProductResults" />
+            </children>
+            <opaqueInsets>
+                <Insets top="10.0" />
+            </opaqueInsets>
+        </Pane>
+        <Button layoutX="1043.0" layoutY="438.0" mnemonicParsing="false" onAction="#onActionExitProgram" prefHeight="25.0" prefWidth="79.0" text="Exit" />
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</AnchorPane>

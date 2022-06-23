@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ModifyPartsController">
+    <children>
+        <VBox layoutX="59.0" layoutY="216.0" prefHeight="265.0" prefWidth="215.0" />
+        <GridPane alignment="CENTER" hgap="4.0" layoutX="299.0" layoutY="379.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="180.0">
+            <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="61.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="131.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="modPartMintxt" prefHeight="26.0" prefWidth="135.0" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </TextField>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Min" />
+            </children>
+        </GridPane>
+        <HBox layoutX="59.0" layoutY="89.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="349.0" spacing="30.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Modify Parts" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <RadioButton fx:id="modINrb" mnemonicParsing="false" onAction="#inORoutRB" text="In-House">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="ModPartTG" />
+                    </toggleGroup></RadioButton>
+                <RadioButton fx:id="modOUTrb" mnemonicParsing="false" onAction="#inORoutRB" text="Outsourced" toggleGroup="$ModPartTG" />
+            </children>
+            <padding>
+                <Insets top="15.0" />
+            </padding>
+        </HBox>
+        <Button layoutX="299.0" layoutY="526.0" mnemonicParsing="false" onAction="#onActionSaveModPart" text="Save" />
+        <Button layoutX="369.0" layoutY="526.0" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" text="Cancel" />
+        <GridPane hgap="5.0" layoutX="59.0" layoutY="171.0" maxWidth="-Infinity" prefHeight="300.0" prefWidth="215.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="7.0" prefWidth="78.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.0" minWidth="0.0" prefWidth="137.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="ID" />
+                <Label text="Name" GridPane.rowIndex="1" />
+                <Label text="Inv" GridPane.rowIndex="2" />
+                <Label text="Price/Cost" GridPane.rowIndex="3" />
+                <Label text="Max" GridPane.rowIndex="4" />
+                <Label fx:id="modPartSpecialLbl" GridPane.rowIndex="5" />
+                <TextField fx:id="modPartID" editable="false" opacity="0.49" GridPane.columnIndex="1" />
+                <TextField fx:id="modPartNametxt" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="modPartInvtxt" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="modPartCosttxt" prefHeight="26.0" prefWidth="189.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="modPartMaxtxt" prefHeight="26.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="modPartSpecialtxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="modPartSpecialLabel" GridPane.rowIndex="5" />
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
